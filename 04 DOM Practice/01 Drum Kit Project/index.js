@@ -17,7 +17,7 @@ for (var i = 0; i < numberOfDrumButtons; i++) {
 
 // Detecting keyboard press
 
-document.addEventListener("keypress", function () {
+document.addEventListener("keypress", function (event) {
     makeSound(event.key);
 });
 
