@@ -1,16 +1,28 @@
 // alert("Welcom")
 
+// Detecting button press
+
 var numberOfDrumButtons = document.querySelectorAll(".drum").length;
 
 for (var i = 0; i < numberOfDrumButtons; i++) {
 
     document.querySelectorAll(".drum")[i].addEventListener("click", function () {
         
-        this.style.color = "white";
-
         var buttonInnerHTML = this.innerHTML;
 
-        switch (buttonInnerHTML) {
+        makeSound(buttonInnerHTML);
+
+    });
+}
+
+// Detecting keyboard press
+
+document.addEventListener("keypress", function () {
+    makeSound(event.key);
+});
+
+function makeSound(key) {
+        switch (key) {
             case "w":
                 var audio = new Audio("sounds/tom-1.mp3");
                 audio.play()
@@ -47,12 +59,6 @@ for (var i = 0; i < numberOfDrumButtons; i++) {
                 break;
                         
             default:
-                break;
-        }
-
-    });
-
+                console.log(buttonInnerHTML);
+        }    
 }
-
-
-
